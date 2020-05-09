@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_145600) do
 
   create_table "music_videos", force: :cascade do |t|
     t.string "name"
+    t.string "url"
     t.string "artist"
     t.string "duration"
     t.bigint "genre_id", null: false
