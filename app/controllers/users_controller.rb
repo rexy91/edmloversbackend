@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
     def new
-        byebug 
+        user = User.create(username:)
+    end
+
+    private
+    def user_params
+            
     end
 
 end
