@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def index
-        byebug\
+        byebug
         @users = User.all
         render json: @users
     end
