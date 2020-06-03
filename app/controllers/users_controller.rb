@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
 
-    def new
-        user = User.create(username:)
+    def index
+        @users = User.all
+        render json: @users
     end
-
+    
     def create
         byebug
     end
+
+
 
     private
     def user_params
