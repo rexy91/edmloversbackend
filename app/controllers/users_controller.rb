@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        byebug
+        @user = User.create(username:params[:username], password:params[:password])
         if @user
             byebug
         end
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-            params.permit(:username, :password, )
+            params.permit(:username, :password)
     end
 end
 
