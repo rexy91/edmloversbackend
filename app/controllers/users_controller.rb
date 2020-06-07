@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @user = User.create(username:params[:username], password:params[:password])
 
         if @user
-            byebug
+            
         end
     end
 
