@@ -8,9 +8,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(username:params[:username], password:params[:password])
-
         if @user
-            
+            render json:@user
         end
     end
 
