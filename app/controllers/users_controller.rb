@@ -14,8 +14,9 @@ class UsersController < ApplicationController
         end
     end
 
-    def login
-
+    def login  
+        byebug
+        @user = User.find_by(params[:username])
     end
 
     private
