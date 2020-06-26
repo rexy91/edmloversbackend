@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :follows
 
   
-  post '/users', to: 'users#login'
+  post '/login', to: 'users#login'
   resources :users
   resources :music_videos
   resources :genres
