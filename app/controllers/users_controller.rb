@@ -7,14 +7,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        byebug
+        # sign up
         @user = User.create(username:params[:username], password:params[:password])
         if @user
             render json:@user
+            byebug
         end
     end
 
     def login  
+        # login 
         byebug
         @user = User.find_by(params[:username])
     end
