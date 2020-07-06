@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+gem 'cloudinary'
 gem 'jwt'
 # Build JSON APIs with ea . Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'

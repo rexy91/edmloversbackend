@@ -6,10 +6,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        # sign up
         @user = User.create(username:params[:username], password:params[:password])
-        if @user
+        byebug
+        if @user.valid?
             render json:@user
+        else
+            byebug
+            render json:{error:@user.errors.full_messages}
         end
     end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_220336) do
+ActiveRecord::Schema.define(version: 2020_07_06_152625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(version: 2020_05_14_220336) do
     t.index ["genre_id"], name: "index_music_videos_on_genre_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "content"
+    t.string "time_created"
+    t.string "likes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.string "video"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -48,4 +60,5 @@ ActiveRecord::Schema.define(version: 2020_05_14_220336) do
   end
 
   add_foreign_key "music_videos", "genres"
+  add_foreign_key "posts", "users"
 end
