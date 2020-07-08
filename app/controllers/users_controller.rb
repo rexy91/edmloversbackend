@@ -7,18 +7,15 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(username:params[:username], password:params[:password])
-        byebug
         if @user.valid?
             render json:@user
         else
-            byebug
             render json:{error:@user.errors.full_messages}
         end
     end
 
     def show
         @user = User.find_by(id:params[:id])
-        byebug
         render json: @user
     end
 

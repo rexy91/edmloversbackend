@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :follows
 
-  
   post '/login', to: 'users#login'
+  get '/persist', to: 'users#persist'
   resources :users
   resources :music_videos
   resources :genres
