@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    before_action :authorized, only: [:persist]
     def index
         @users = User.all
         render json: @users
@@ -12,6 +12,11 @@ class UsersController < ApplicationController
         else
             render json:{error:@user.errors.full_messages}
         end
+    end
+
+    def persist
+        wristband = encode_token({user_id: @user.id})
+        render json: {user: UserSerializer.new(@user), token: wristband}
     end
 
     def show
