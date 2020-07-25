@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   post '/login', to: 'users#login'
   get '/persist', to: 'users#persist'
+  post '/uploadProfilepic', to: 'users#uploadProfilepic'
   resources :users
   resources :music_videos
   resources :genres
