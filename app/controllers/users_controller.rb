@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     def create
         @user = User.create(username:params[:username], password:params[:password])
         if @user.valid?
-            render json:@user
+            wristband = encode_token({user_id: @user.id})
+            render json:{user:UserSerializer.new(@user), token:wristband}
         else
             render json:{error:@user.errors.full_messages}
         end
